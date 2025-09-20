@@ -1,0 +1,140 @@
+{
+  "name": "Geniusglider IT Services",
+  "short_name": "Geniusglider",
+  "description": "Enterprise IT services, cloud solutions, and cybersecurity for SMBs and mid-market companies",
+  "version": "1.0.0",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0A1B35",
+  "background_color": "#F8FAFC",
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en",
+  "dir": "ltr",
+
+  "icons": [
+    {
+      "src": "assets/images/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/images/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/images/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/images/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "assets/images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Geniusglider IT Services - Desktop View"
+    },
+    {
+      "src": "assets/images/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Geniusglider IT Services - Mobile View"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Free Consultation",
+      "short_name": "Consultation",
+      "description": "Book your free IT strategy session",
+      "url": "/#consultation-form",
+      "icons": [
+        {
+          "src": "assets/images/shortcut-consultation.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "ROI Calculator",
+      "short_name": "Calculator",
+      "description": "Calculate your IT savings potential",
+      "url": "/#roi-calculators",
+      "icons": [
+        {
+          "src": "assets/images/shortcut-calculator.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "short_name": "Services",
+      "description": "View our IT services",
+      "url": "/#services",
+      "icons": [
+        {
+          "src": "assets/images/shortcut-services.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://geniusglider.com/manifest.json"
+    }
+  ],
+
+  "prefer_related_applications": false,
+
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+
+  "handle_links": "preferred"
+}

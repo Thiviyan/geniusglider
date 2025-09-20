@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://geniusglider.com/</loc>
+        <lastmod>2024-09-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://geniusglider.com/assets/images/hero1.png</image:loc>
+            <image:title>Geniusglider IT Services Dashboard</image:title>
+            <image:caption>Professional IT services and solutions dashboard interface</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://geniusglider.com/assets/images/logo.png</image:loc>
+            <image:title>Geniusglider Logo</image:title>
+            <image:caption>Geniusglider IT Services company logo</image:caption>
+        </image:image>
+    </url>
+
+    <!-- AI Solutions Page -->
+    <url>
+        <loc>https://geniusglider.com/ai-solutions.html</loc>
+        <lastmod>2024-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://geniusglider.com/assets/images/AI_powered_IT_monitoring_dashboard_4a2b8cd1.png</image:loc>
+            <image:title>AI-Powered IT Monitoring Dashboard</image:title>
+            <image:caption>Advanced AI solutions for IT infrastructure monitoring and management</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Services Page -->
+    <url>
+        <loc>https://geniusglider.com/services.html</loc>
+        <lastmod>2024-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Case Studies Page -->
+    <url>
+        <loc>https://geniusglider.com/case-studies.html</loc>
+        <lastmod>2024-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>https://geniusglider.com/about.html</loc>
+        <lastmod>2024-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://geniusglider.com/assets/images/IT_professionals_with_AI_interfaces_6c2ace59.png</image:loc>
+            <image:title>IT Professionals with AI Interfaces</image:title>
+            <image:caption>Geniusglider team working with advanced AI technology interfaces</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://geniusglider.com/assets/images/IT_dashboard_interface_screenshot_9593deab.png</image:loc>
+            <image:title>IT Dashboard Interface Screenshot</image:title>
+            <image:caption>Professional IT management dashboard interface</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Contact Page -->
+    <url>
+        <loc>https://geniusglider.com/contact.html</loc>
+        <lastmod>2024-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://geniusglider.com/assets/images/Customer_service_with_AI_chat_0078c33b.png</image:loc>
+            <image:title>Customer Service with AI Chat</image:title>
+            <image:caption>Advanced customer service interface with AI-powered chat support</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Service Category Pages -->
+    <url>
+        <loc>https://geniusglider.com/services.html#managed-it</loc>
+        <lastmod>2024-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://geniusglider.com/services.html#cloud</loc>
+        <lastmod>2024-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://geniusglider.com/services.html#security</loc>
+        <lastmod>2024-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://geniusglider.com/services.html#network</loc>
+        <lastmod>2024-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://geniusglider.com/services.html#voip</loc>
+        <lastmod>2024-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>

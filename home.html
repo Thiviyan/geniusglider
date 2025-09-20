@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geniusglider - IT That Propels Your Business Forward</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Geniusglider provides managed IT, cloud, and cybersecurity services that don't just work—they propel your business forward. Get your free IT strategy session.">
+    <meta name="author" content="Geniusglider IT Services">
+    <meta name="keywords" content="managed IT services, cloud solutions, cybersecurity, IT consulting, business growth, IT support India">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https://placehold.co/32x32/1E40AF/FFFFFF?text=G">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Geniusglider - IT That Propels Your Business Forward">
+    <meta property="og:description" content="Stop worrying about IT. Start scaling your business with our proactive managed services, cloud solutions, and cybersecurity.">
+    <meta property="og:image" content="https://placehold.co/1200x630/1a202c/ffffff/png?text=Geniusglider">
+    <meta property="og:url" content="https://geniusglider.com/">
+    <meta property="og:type" content="website">
+
+    <!-- External Libraries for Interactivity -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <style>
+        /* Custom Styles & Tailwind Config */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* Slate 900 */
+            color: #E2E8F0; /* Slate 200 */
+        }
+        .highlight {
+            background: -webkit-linear-gradient(45deg, #3B82F6, #818CF8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #1E40AF;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+        /* Keyframe animations */
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-in-up {
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+        @keyframes infinite-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+        .scrolling-logos .logos-slide {
+            animation: infinite-scroll 40s linear infinite;
+        }
+        /* Progress bar for form */
+        .progress-fill {
+            transition: width 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link focus:top-0">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" aria-label="Geniusglider home" class="text-2xl font-bold text-white">
+                Genius<span class="text-blue-500">glider</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="text-slate-300 hover:text-white transition-colors">Services</a>
+                <a href="#roi-calculators" class="text-slate-300 hover:text-white transition-colors">ROI Calculator</a>
+                <a href="#case-studies" class="text-slate-300 hover:text-white transition-colors">Case Studies</a>
+                <a href="#about" class="text-slate-300 hover:text-white transition-colors">About</a>
+            </div>
+            <a href="#consultation-form" class="hidden md:inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition-transform hover:scale-105 transform">
+                Free Consultation
+            </a>
+            <button id="mobile-menu-btn" class="md:hidden text-white">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-slate-900/90 backdrop-blur-sm z-40 md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+            <a href="#services" class="mobile-link text-slate-300 hover:text-white">Services</a>
+            <a href="#roi-calculators" class="mobile-link text-slate-300 hover:text-white">ROI Calculator</a>
+            <a href="#case-studies" class="mobile-link text-slate-300 hover:text-white">Case Studies</a>
+            <a href="#about" class="mobile-link text-slate-300 hover:text-white">About</a>
+            <a href="#consultation-form" class="mobile-link bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg">Free Consultation</a>
+        </div>
+    </div>
+
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center text-center overflow-hidden" id="hero">
+            <canvas id="hero-canvas"></canvas>
+            <div class="relative z-10 container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                    Stop Worrying About IT.
+                    <br>
+                    <span class="highlight">Start Scaling Your Business.</span>
+                </h1>
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 mb-10">
+                    We provide the technology foundation and proactive support you need to achieve unstoppable growth. Join 200+ companies who trust us to manage their IT infrastructure.
+                </p>
+                <div class="flex justify-center items-center gap-4 mb-12">
+                    <a href="#consultation-form" class="bg-blue-600 text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+                        Get Your Free IT Assessment
+                    </a>
+                    <a href="#services" class="bg-slate-700/50 text-white font-bold px-8 py-4 rounded-lg hover:bg-slate-600/50 transition-all duration-300 border border-slate-600">
+                        Explore Services
+                    </a>
+                </div>
+                <!-- Animated Stats -->
+                <div class="flex justify-center gap-8 md:gap-16">
+                    <div class="text-center">
+                        <div class="flex items-center justify-center gap-2">
+                           <i data-lucide="shield-check" class="text-blue-400"></i>
+                           <span class="text-3xl md:text-4xl font-bold text-white stat-number" data-target="99.9">0</span>
+                        </div>
+                        <span class="text-sm text-slate-400">% Uptime Guarantee</span>
+                    </div>
+                    <div class="text-center">
+                         <div class="flex items-center justify-center gap-2">
+                            <i data-lucide="clock" class="text-blue-400"></i>
+                            <span class="text-3xl md:text-4xl font-bold text-white stat-number" data-target="24">0</span>
+                        </div>
+                        <span class="text-sm text-slate-400">/7 Proactive Support</span>
+                    </div>
+                    <div class="text-center">
+                         <div class="flex items-center justify-center gap-2">
+                            <i data-lucide="users" class="text-blue-400"></i>
+                            <span class="text-3xl md:text-4xl font-bold text-white stat-number" data-target="200">0</span>
+                        </div>
+                        <span class="text-sm text-slate-400">+ Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Scrolling Client Logos -->
+        <div class="py-12 bg-slate-900/50 overflow-hidden relative">
+            <div class="text-center mb-8 text-slate-400">Trusted by innovative companies worldwide</div>
+            <div class="scrolling-logos w-full inline-flex flex-nowrap">
+                <div class="logos-slide flex items-center justify-center space-x-16 animate-infinite-scroll">
+                    <!-- Placeholder logos -->
+                    <p class="text-2xl font-semibold text-slate-500">TechCorp</p>
+                    <p class="text-2xl font-semibold text-slate-500">Innovate Inc.</p>
+                    <p class="text-2xl font-semibold text-slate-500">QuantumLeap</p>
+                    <p class="text-2xl font-semibold text-slate-500">FutureSoft</p>
+                    <p class="text-2xl font-semibold text-slate-500">NextGen</p>
+                    <p class="text-2xl font-semibold text-slate-500">DataDriven</p>
+                    <p class="text-2xl font-semibold text-slate-500">Synergy</p>
+                </div>
+                <div class="logos-slide flex items-center justify-center space-x-16 animate-infinite-scroll" aria-hidden="true">
+                    <p class="text-2xl font-semibold text-slate-500">TechCorp</p>
+                    <p class="text-2xl font-semibold text-slate-500">Innovate Inc.</p>
+                    <p class="text-2xl font-semibold text-slate-500">QuantumLeap</p>
+                    <p class="text-2xl font-semibold text-slate-500">FutureSoft</p>
+                    <p class="text-2xl font-semibold text-slate-500">NextGen</p>
+                    <p class="text-2xl font-semibold text-slate-500">DataDriven</p>
+                    <p class="text-2xl font-semibold text-slate-500">Synergy</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <section class="py-20 sm:py-32" id="services">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Your On-Demand Tech Team</h2>
+                    <p class="text-lg text-slate-300">
+                        From foundational infrastructure to advanced cybersecurity, we provide the end-to-end IT services that fuel your growth and protect your assets.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="glass-card rounded-xl p-8 flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="mb-4 bg-blue-900/50 text-blue-400 w-12 h-12 rounded-lg flex items-center justify-center">
+                            <i data-lucide="server"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Managed IT Services</h3>
+                        <p class="text-slate-400 flex-grow mb-4">Proactive monitoring, maintenance, and support for your entire IT infrastructure. Reduce downtime by up to 95%.</p>
+                        <a href="#roi-calculators" class="font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">
+                            Calculate Savings <span class="group-hover:ml-2 transition-all duration-300">→</span>
+                        </a>
+                    </div>
+                     <!-- Service Card 2 -->
+                    <div class="glass-card rounded-xl p-8 flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="mb-4 bg-blue-900/50 text-blue-400 w-12 h-12 rounded-lg flex items-center justify-center">
+                            <i data-lucide="cloud"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Cloud Solutions</h3>
+                        <p class="text-slate-400 flex-grow mb-4">Seamless cloud migration, optimization, and management for enhanced security, scalability, and cost-efficiency.</p>
+                        <a href="#roi-calculators" class="font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">
+                            Estimate Cloud Savings <span class="group-hover:ml-2 transition-all duration-300">→</span>
+                        </a>
+                    </div>
+                     <!-- Service Card 3 -->
+                    <div class="glass-card rounded-xl p-8 flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="mb-4 bg-blue-900/50 text-blue-400 w-12 h-12 rounded-lg flex items-center justify-center">
+                            <i data-lucide="shield-alert"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Cybersecurity</h3>
+                        <p class="text-slate-400 flex-grow mb-4">Advanced threat protection, compliance management, and security training to safeguard your business from modern threats.</p>
+                        <a href="#roi-calculators" class="font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">
+                            Assess Your Risk <span class="group-hover:ml-2 transition-all duration-300">→</span>
+                        </a>
+                    </div>
+                     <!-- Service Card 4 -->
+                    <div class="glass-card rounded-xl p-8 flex flex-col group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="mb-4 bg-blue-900/50 text-blue-400 w-12 h-12 rounded-lg flex items-center justify-center">
+                            <i data-lucide="network"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Network Infrastructure</h3>
+                        <p class="text-slate-400 flex-grow mb-4">Design, implement, and maintain robust, scalable network solutions that form the backbone of your business operations.</p>
+                        <a href="#consultation-form" class="font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">
+                            Plan Your Network <span class="group-hover:ml-2 transition-all duration-300">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROI Calculator Section -->
+        <section class="py-20 sm:py-32 bg-slate-900/70" id="roi-calculators">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Visualize Your IT Savings</h2>
+                    <p class="text-lg text-slate-300">
+                        Use our interactive calculator to see the tangible financial impact of optimizing your IT operations with Geniusglider.
+                    </p>
+                </div>
+                
+                <div class="glass-card rounded-xl p-8 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Calculator Inputs -->
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-white">Your Current IT Scenario</h3>
+                        <div>
+                            <label for="employee-count" class="block mb-2 font-semibold text-slate-300">Number of Employees</label>
+                            <input type="range" id="employee-count" min="10" max="500" value="50" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                            <div class="text-right font-bold text-white mt-1" id="employee-count-value">50</div>
+                        </div>
+                        <div>
+                            <label for="incidents" class="block mb-2 font-semibold text-slate-300">Monthly IT Incidents</label>
+                            <input type="range" id="incidents" min="1" max="50" value="10" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                             <div class="text-right font-bold text-white mt-1" id="incidents-value">10</div>
+                        </div>
+                        <div>
+                            <label for="resolution-time" class="block mb-2 font-semibold text-slate-300">Average Resolution Time (Hours)</label>
+                            <input type="range" id="resolution-time" min="1" max="24" value="8" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                             <div class="text-right font-bold text-white mt-1" id="resolution-time-value">8</div>
+                        </div>
+                         <div>
+                            <label for="hourly-cost" class="block mb-2 font-semibold text-slate-300">Average Employee Hourly Cost (₹)</label>
+                            <input type="range" id="hourly-cost" min="500" max="5000" step="100" value="1500" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+                             <div class="text-right font-bold text-white mt-1" id="hourly-cost-value">₹1,500</div>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Results -->
+                    <div class="text-center">
+                         <h3 class="text-2xl font-bold text-white mb-4">Your Potential Annual Savings</h3>
+                         <canvas id="roiChart"></canvas>
+                         <p class="mt-6 text-lg text-slate-300" id="results-summary">
+                             With our Managed IT Service, you could reinvest that back into your business.
+                         </p>
+                         <a href="#consultation-form" class="mt-6 inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-transform hover:scale-105 transform">
+                            Get a Detailed Analysis
+                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Case Studies Section -->
+        <section class="py-20 sm:py-32" id="case-studies">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Proven Results, Real Stories</h2>
+                    <p class="text-lg text-slate-300">
+                        See how we've partnered with businesses like yours to overcome complex IT challenges and drive measurable success.
+                    </p>
+                </div>
+
+                <!-- Filter Tags -->
+                <div class="flex justify-center flex-wrap gap-2 mb-12">
+                     <button class="case-study-filter-btn active" data-filter="all">All</button>
+                    <button class="case-study-filter-btn" data-filter="healthcare">Healthcare</button>
+                    <button class="case-study-filter-btn" data-filter="manufacturing">Manufacturing</button>
+                    <button class="case-study-filter-btn" data-filter="finance">Financial Services</button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Case Study Card 1 -->
+                    <div class="case-study-card glass-card rounded-xl p-8 overflow-hidden group" data-category="healthcare">
+                        <span class="text-sm font-semibold text-blue-400 bg-blue-900/50 py-1 px-3 rounded-full">Healthcare</span>
+                        <h3 class="text-xl font-bold text-white my-4">90% Reduction in System Downtime</h3>
+                        <p class="text-slate-400 mb-6">A major healthcare provider was crippled by frequent outages affecting patient care. We engineered a resilient, compliant infrastructure.</p>
+                        <div class="space-y-4">
+                            <div class="text-sm text-white">Downtime Reduction</div>
+                            <div class="w-full bg-slate-700 rounded-full h-4">
+                               <div class="bg-gradient-to-r from-blue-500 to-cyan-400 h-4 rounded-full" style="width: 90%"></div>
+                            </div>
+                            <div class="flex justify-between font-bold text-white">
+                                <span>₹15L+ Annual Savings</span>
+                                <span>99.99% Uptime</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Case Study Card 2 -->
+                    <div class="case-study-card glass-card rounded-xl p-8 overflow-hidden group" data-category="manufacturing">
+                        <span class="text-sm font-semibold text-green-400 bg-green-900/50 py-1 px-3 rounded-full">Manufacturing</span>
+                        <h3 class="text-xl font-bold text-white my-4">40% IT Cost Reduction via Cloud</h3>
+                        <p class="text-slate-400 mb-6">A manufacturing firm's on-premise servers were costly and inefficient. Our hybrid cloud strategy cut costs and boosted scalability.</p>
+                         <div class="space-y-4">
+                            <div class="text-sm text-white">Cost Reduction</div>
+                            <div class="w-full bg-slate-700 rounded-full h-4">
+                               <div class="bg-gradient-to-r from-green-500 to-emerald-400 h-4 rounded-full" style="width: 40%"></div>
+                            </div>
+                            <div class="flex justify-between font-bold text-white">
+                                <span>3 Months Migration</span>
+                                <span>200% Scalability</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Case Study Card 3 -->
+                    <div class="case-study-card glass-card rounded-xl p-8 overflow-hidden group" data-category="finance">
+                        <span class="text-sm font-semibold text-indigo-400 bg-indigo-900/50 py-1 px-3 rounded-full">Financial Services</span>
+                        <h3 class="text-xl font-bold text-white my-4">Zero Security Breaches in 3 Years</h3>
+                        <p class="text-slate-400 mb-6">A financial firm required ironclad security. We deployed a multi-layered defense strategy, ensuring data integrity and compliance.</p>
+                         <div class="space-y-4">
+                            <div class="text-sm text-white">Compliance Rate</div>
+                            <div class="w-full bg-slate-700 rounded-full h-4">
+                               <div class="bg-gradient-to-r from-indigo-500 to-purple-400 h-4 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <div class="flex justify-between font-bold text-white">
+                                <span>0 Breaches</span>
+                                <span>₹50L Risk Avoided</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-20 sm:py-32 bg-slate-900/70" id="about">
+            <div class="container mx-auto px-6">
+                 <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The People Behind Your Tech</h2>
+                    <p class="text-lg text-slate-300">
+                        We're more than just an IT provider; we're your dedicated technology partner, founded on expertise, reliability, and a passion for helping businesses succeed.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+                    <!-- Visual Timeline -->
+                    <div class="lg:col-span-2">
+                        <h3 class="text-2xl font-bold text-white mb-8">Our Journey</h3>
+                        <div class="relative pl-8 border-l-2 border-slate-700 space-y-12">
+                            <!-- Timeline Item 1 -->
+                            <div class="absolute -left-4 w-8 h-8 bg-blue-500 rounded-full border-4 border-slate-900"></div>
+                            <div>
+                                <h4 class="font-bold text-white">2020: Founded in Kolkata</h4>
+                                <p class="text-slate-400">To democratize enterprise-grade IT for SMBs.</p>
+                            </div>
+                             <!-- Timeline Item 2 -->
+                            <div class="absolute -left-4 w-8 h-8 bg-blue-500 rounded-full border-4 border-slate-900"></div>
+                            <div>
+                                <h4 class="font-bold text-white">2022: 100th Client Milestone</h4>
+                                <p class="text-slate-400">Expanded our team and service offerings.</p>
+                            </div>
+                             <!-- Timeline Item 3 -->
+                            <div class="absolute -left-4 w-8 h-8 bg-blue-500 rounded-full border-4 border-slate-900"></div>
+                             <div>
+                                <h4 class="font-bold text-white">2024: AWS Advanced Partner</h4>
+                                <p class="text-slate-400">Recognized for excellence in cloud solutions.</p>
+                            </div>
+                             <!-- Timeline Item 4 -->
+                            <div class="absolute -left-4 w-8 h-8 bg-blue-500 rounded-full border-4 border-slate-900"></div>
+                            <div>
+                                <h4 class="font-bold text-white">Today: Serving Globally</h4>
+                                <p class="text-slate-400">Helping businesses worldwide scale securely.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Leadership -->
+                    <div class="lg:col-span-3">
+                        <h3 class="text-2xl font-bold text-white mb-8">Meet Our Leadership</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                            <div>
+                                <img src="https://placehold.co/200x200/475569/FFFFFF/png?text=CEO" alt="CEO" class="rounded-full w-32 h-32 mx-auto mb-4 border-4 border-slate-700">
+                                <h4 class="font-bold text-white">Aarav Sharma</h4>
+                                <p class="text-slate-400">Founder & CEO</p>
+                            </div>
+                             <div>
+                                <img src="https://placehold.co/200x200/475569/FFFFFF/png?text=CTO" alt="CTO" class="rounded-full w-32 h-32 mx-auto mb-4 border-4 border-slate-700">
+                                <h4 class="font-bold text-white">Priya Singh</h4>
+                                <p class="text-slate-400">Chief Technology Officer</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/200x200/475569/FFFFFF/png?text=COO" alt="COO" class="rounded-full w-32 h-32 mx-auto mb-4 border-4 border-slate-700">
+                                <h4 class="font-bold text-white">Rohan Mehta</h4>
+                                <p class="text-slate-400">Chief Operations Officer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consultation Form Section -->
+        <section class="py-20 sm:py-32" id="consultation-form">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                     <div class="text-center mb-4">
+                        <span class="inline-block bg-blue-900/50 text-blue-300 text-sm font-semibold px-4 py-1 rounded-full">
+                           No Obligation, Just Strategy
+                        </span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get Your Free IT Strategy Session</h2>
+                    <p class="text-lg text-slate-300">
+                        Let's talk about your business goals. Our experts will provide a clear, actionable roadmap to optimize your technology and drive growth.
+                    </p>
+                </div>
+                
+                <div class="max-w-3xl mx-auto glass-card rounded-xl p-8 md:p-12">
+                    <form id="progressive-form" novalidate>
+                        <!-- Progress Indicator -->
+                        <div class="mb-8">
+                             <div class="flex justify-between mb-1 text-sm font-semibold text-slate-300">
+                                <span id="step-name">Step 1: Contact Info</span>
+                                <span id="step-progress-text">1 / 3</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full progress-fill" style="width: 33.33%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Form Steps -->
+                        <div id="form-steps">
+                            <!-- Step 1: Contact Information -->
+                            <fieldset class="form-step active space-y-6" data-step="1">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="first-name" class="form-label">First Name</label>
+                                        <input type="text" id="first-name" name="first-name" required class="form-input">
+                                    </div>
+                                    <div>
+                                        <label for="last-name" class="form-label">Last Name</label>
+                                        <input type="text" id="last-name" name="last-name" required class="form-input">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="email" class="form-label">Business Email</label>
+                                    <input type="email" id="email" name="email" required class="form-input">
+                                </div>
+                            </fieldset>
+
+                            <!-- Step 2: Company Details -->
+                             <fieldset class="form-step hidden space-y-6" data-step="2">
+                                <div>
+                                    <label for="company-name" class="form-label">Company Name</label>
+                                    <input type="text" id="company-name" name="company-name" required class="form-input">
+                                </div>
+                                 <div>
+                                    <label for="industry" class="form-label">Industry</label>
+                                    <select id="industry" name="industry" required class="form-input">
+                                        <option value="">Select your industry</option>
+                                        <option value="healthcare">Healthcare & Life Sciences</option>
+                                        <option value="finance">Financial Services</option>
+                                        <option value="ecommerce">E-commerce & Retail</option>
+                                        <option value="saas">SaaS & Technology</option>
+                                        <option value="manufacturing">Manufacturing</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <p id="industry-feedback" class="text-sm text-blue-400 mt-2 hidden"></p>
+                                </div>
+                            </fieldset>
+
+                            <!-- Step 3: Needs Assessment -->
+                            <fieldset class="form-step hidden space-y-6" data-step="3">
+                                <div>
+                                    <label class="form-label">What's your biggest IT challenge?</label>
+                                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-2">
+                                        <label class="challenge-card">
+                                            <input type="radio" name="challenge" value="downtime" class="sr-only">
+                                            <span>Downtime</span>
+                                        </label>
+                                        <label class="challenge-card">
+                                            <input type="radio" name="challenge" value="security" class="sr-only">
+                                            <span>Security</span>
+                                        </label>
+                                         <label class="challenge-card">
+                                            <input type="radio" name="challenge" value="costs" class="sr-only">
+                                            <span>High Costs</span>
+                                        </label>
+                                        <label class="challenge-card">
+                                            <input type="radio" name="challenge" value="support" class="sr-only">
+                                            <span>Slow Support</span>
+                                        </label>
+                                        <label class="challenge-card">
+                                            <input type="radio" name="challenge" value="scaling" class="sr-only">
+                                            <span>Scaling</span>
+                                        </label>
+                                        <label class="challenge-card">
+                                            <input type="radio" name="challenge" value="other" class="sr-only">
+                                            <span>Other</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <!-- Form Navigation -->
+                        <div class="mt-8 flex justify-between items-center">
+                            <button type="button" id="prev-btn" class="form-nav-btn" disabled>Previous</button>
+                            <button type="button" id="next-btn" class="form-nav-btn bg-blue-600 text-white hover:bg-blue-700">Next</button>
+                            <button type="submit" id="submit-btn" class="form-nav-btn bg-blue-600 text-white hover:bg-blue-700 hidden">Book My Session</button>
+                        </div>
+                    </form>
+                    <div id="form-success" class="hidden text-center py-10">
+                        <div class="w-20 h-20 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="check" class="w-12 h-12"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Thank You!</h3>
+                        <p class="text-slate-300">Your request has been received. Our team will contact you within 24 hours to schedule your free IT strategy session.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/50 border-t border-slate-800">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <div class="col-span-2 lg:col-span-2">
+                    <a href="#" class="text-2xl font-bold text-white">Genius<span class="text-blue-500">glider</span></a>
+                    <p class="mt-4 text-slate-400 max-w-xs">Transforming businesses through innovative IT solutions and strategic technology partnerships.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="footer-link">Managed IT</a></li>
+                        <li><a href="#services" class="footer-link">Cloud Solutions</a></li>
+                        <li><a href="#services" class="footer-link">Cybersecurity</a></li>
+                        <li><a href="#services" class="footer-link">Network</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="footer-link">About Us</a></li>
+                        <li><a href="#case-studies" class="footer-link">Case Studies</a></li>
+                        <li><a href="#" class="footer-link">Careers</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                 <div class="col-span-2 md:col-span-1">
+                    <h4 class="font-semibold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li>+91-98765-43210</li>
+                        <li>hello@geniusglider.com</li>
+                        <li>Kolkata, West Bengal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+                <p>&copy; 2025 Geniusglider IT Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Tailwind Classes for JS -->
+    <style>
+        .form-label { @apply block mb-2 font-semibold text-slate-300; }
+        .form-input { @apply w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow; }
+        .form-nav-btn { @apply font-semibold px-6 py-2 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed; }
+        .case-study-filter-btn { @apply bg-slate-800 text-slate-300 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition-colors; }
+        .case-study-filter-btn.active { @apply bg-blue-600 text-white; }
+        .challenge-card { @apply cursor-pointer bg-slate-800 text-slate-300 p-4 rounded-lg text-center border-2 border-slate-700 hover:border-blue-500 transition-colors; }
+        .challenge-card input:checked + span { @apply text-blue-400 font-bold; }
+        input:checked ~ .challenge-card { @apply border-blue-500; } /* This is a trick, won't work perfectly without more JS */
+        .footer-link { @apply text-slate-400 hover:text-white transition-colors; }
+    </style>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Lucide Icons
+        lucide.createIcons();
+
+        // --- Header Scroll Effect ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-slate-900/80', 'backdrop-blur-sm', 'shadow-lg');
+            } else {
+                header.classList.remove('bg-slate-900/80', 'backdrop-blur-sm', 'shadow-lg');
+            }
+        });
+
+        // --- Mobile Menu ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                 mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Hero Section 3D Canvas ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('hero-canvas'), alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        
+        const particlesGeometry = new THREE.BufferGeometry;
+        const particlesCnt = 5000;
+        const posArray = new Float32Array(particlesCnt * 3);
+        for (let i = 0; i < particlesCnt * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 5;
+        }
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.005,
+            color: 0x3b82f6 // Blue-500
+        });
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+        camera.position.z = 2;
+
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
+
+        const clock = new THREE.Clock();
+        const animate = () => {
+            requestAnimationFrame(animate);
+            const elapsedTime = clock.getElapsedTime();
+            particlesMesh.rotation.y = -0.1 * elapsedTime;
+            if (mouseX > 0) {
+                 particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.00008);
+                 particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.00008);
+            }
+            renderer.render(scene, camera);
+        };
+        animate();
+        
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+
+
+        // --- Animate on Scroll ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('stat-number')) {
+                        const target = +entry.target.getAttribute('data-target');
+                        const el = entry.target;
+                        let start = 0;
+                        const duration = 2000;
+                        const stepTime = Math.abs(Math.floor(duration / target));
+                        
+                        const timer = setInterval(() => {
+                            start += 1;
+                            if (target % 1 !== 0) { // check for float
+                                el.textContent = (start / 10).toFixed(1);
+                                if ((start/10) >= target) {
+                                  el.textContent = target;
+                                  clearInterval(timer);
+                                }
+                            } else {
+                                el.textContent = start;
+                                if (start >= target) {
+                                    el.textContent = target;
+                                    clearInterval(timer);
+                                }
+                            }
+                        }, 10);
+                    } else {
+                        entry.target.classList.add('animate-slide-in-up');
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.stat-number').forEach(el => observer.observe(el));
+
+
+        // --- ROI Calculator ---
+        const inputs = [
+            document.getElementById('employee-count'),
+            document.getElementById('incidents'),
+            document.getElementById('resolution-time'),
+            document.getElementById('hourly-cost')
+        ];
+        const valueDisplays = {
+            'employee-count': document.getElementById('employee-count-value'),
+            'incidents': document.getElementById('incidents-value'),
+            'resolution-time': document.getElementById('resolution-time-value'),
+            'hourly-cost': document.getElementById('hourly-cost-value')
+        };
+
+        const roiChartCtx = document.getElementById('roiChart').getContext('2d');
+        let roiChart = new Chart(roiChartCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Current IT Cost', 'With Geniusglider'],
+                datasets: [{
+                    label: 'Annual Cost (₹)',
+                    data: [0, 0],
+                    backgroundColor: [
+                        'rgba(239, 68, 68, 0.6)', // Red-500
+                        'rgba(59, 130, 246, 0.6)' // Blue-500
+                    ],
+                    borderColor: [
+                        'rgba(239, 68, 68, 1)',
+                        'rgba(59, 130, 246, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value, index, values) {
+                                return '₹' + value.toLocaleString('en-IN');
+                            },
+                             color: '#94a3b8' // Slate-400
+                        },
+                        grid: { color: 'rgba(71, 85, 105, 0.5)'}
+                    },
+                    x: {
+                         ticks: { color: '#e2e8f0'}, // Slate-200
+                         grid: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        const calculateROI = () => {
+            const [employees, incidents, resTime, hourlyCost] = inputs.map(i => i.value);
+
+            // Update display values
+            valueDisplays['employee-count'].textContent = employees;
+            valueDisplays['incidents'].textContent = incidents;
+            valueDisplays['resolution-time'].textContent = `${resTime} hours`;
+            valueDisplays['hourly-cost'].textContent = `₹${parseInt(hourlyCost).toLocaleString('en-IN')}`;
+
+
+            const monthlyDowntimeHours = incidents * resTime;
+            const currentMonthlyCost = monthlyDowntimeHours * hourlyCost * (employees * 0.25); // Assume 25% of workforce affected
+            const currentAnnualCost = currentMonthlyCost * 12;
+
+            // Assume Geniusglider reduces incidents by 80% and resTime by 50%
+            const geniusgliderIncidents = incidents * 0.2;
+            const geniusgliderResTime = resTime * 0.5;
+            const geniusgliderMonthlyDowntime = geniusgliderIncidents * geniusgliderResTime;
+            // Let's assume a base cost for our service
+            const geniusgliderServiceCost = employees * 1000; // Simplified pricing
+            const geniusgliderTotalCost = (geniusgliderMonthlyDowntime * hourlyCost * (employees * 0.25)) + geniusgliderServiceCost;
+            const geniusgliderAnnualCost = geniusgliderTotalCost * 12;
+
+            const annualSavings = currentAnnualCost - geniusgliderAnnualCost;
+
+            // Update Chart
+            roiChart.data.datasets[0].data[0] = Math.round(currentAnnualCost);
+            roiChart.data.datasets[0].data[1] = Math.round(geniusgliderAnnualCost);
+            roiChart.update();
+
+            // Update Summary Text
+            document.getElementById('results-summary').textContent = `Based on your scenario, you could save approximately ₹${Math.round(annualSavings).toLocaleString('en-IN')} annually by switching to Geniusglider.`;
+        };
+
+        inputs.forEach(input => input.addEventListener('input', calculateROI));
+        calculateROI(); // Initial calculation
+
+        // --- Case Study Filter ---
+        const filterBtns = document.querySelectorAll('.case-study-filter-btn');
+        const caseStudyCards = document.querySelectorAll('.case-study-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+
+                caseStudyCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // --- Progressive Form ---
+        const form = document.getElementById('progressive-form');
+        const steps = Array.from(form.querySelectorAll('.form-step'));
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const stepName = document.getElementById('step-name');
+        const stepProgressText = document.getElementById('step-progress-text');
+
+        let currentStep = 0;
+        const stepTitles = ["Contact Info", "Company Details", "IT Needs"];
+
+        const updateFormView = () => {
+            steps.forEach((step, index) => {
+                step.classList.toggle('active', index === currentStep);
+                step.classList.toggle('hidden', index !== currentStep);
+            });
+            const progress = ((currentStep + 1) / steps.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            stepName.textContent = `Step ${currentStep + 1}: ${stepTitles[currentStep]}`;
+            stepProgressText.textContent = `${currentStep + 1} / ${steps.length}`;
+
+            prevBtn.disabled = currentStep === 0;
+            if (currentStep === steps.length - 1) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+        };
+        
+        const validateStep = () => {
+            const currentFields = steps[currentStep].querySelectorAll('[required]');
+            let isValid = true;
+            currentFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('border-red-500');
+                    isValid = false;
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+            return isValid;
+        };
+
+        nextBtn.addEventListener('click', () => {
+            if (validateStep() && currentStep < steps.length - 1) {
+                currentStep++;
+                updateFormView();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                updateFormView();
+            }
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (validateStep()) {
+                // Here you would typically send the form data
+                console.log('Form submitted!');
+                form.classList.add('hidden');
+                document.getElementById('form-success').classList.remove('hidden');
+                 lucide.createIcons(); // Re-render icons for success message
+            }
+        });
+        
+        // Industry feedback
+        document.getElementById('industry').addEventListener('change', (e) => {
+            const feedbackEl = document.getElementById('industry-feedback');
+            const industry = e.target.value;
+            let message = '';
+            if (industry === 'healthcare') message = "Great! We have extensive experience with HIPAA compliance.";
+            if (industry === 'finance') message = "Excellent, we specialize in financial-grade security protocols.";
+            if (industry === 'saas') message = "Perfect, we understand the uptime and scalability needs of SaaS.";
+            
+            feedbackEl.textContent = message;
+            feedbackEl.classList.toggle('hidden', !message);
+        });
+
+        // Challenge card selection
+        const challengeCards = document.querySelectorAll('.challenge-card');
+        challengeCards.forEach(card => {
+            card.addEventListener('click', () => {
+                challengeCards.forEach(c => c.classList.remove('bg-blue-900/50', 'border-blue-500'));
+                card.classList.add('bg-blue-900/50', 'border-blue-500');
+            })
+        });
+
+    });
+    </script>
+</body>
+</html>
