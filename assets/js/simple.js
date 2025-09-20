@@ -13,6 +13,7 @@
             initAnimatedNumbers();
             initROICalculator();
             initCaseStudyFilters();
+            initializeContactPage();
             console.log('Geniusglider app initialized');
         } catch (error) {
             console.error('Error initializing app:', error);
@@ -381,12 +382,7 @@
         initFormValidation();
     }
 
-    // Add contact page initialization to the main init
-    const originalInit = initializeApp;
-    function initializeApp() {
-        originalInit();
-        initializeContactPage();
-    }
+    // Contact page initialization is now included in the main initializeApp function above
 
     // Make calculateROI available globally for any remaining inline calls
     window.calculateROI = calculateROI;
