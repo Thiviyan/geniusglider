@@ -158,23 +158,23 @@
                     <div class="text-center">
                         <div class="flex items-center justify-center gap-2">
                            <i data-lucide="shield-check" class="text-blue-400"></i>
-                           <span class="text-3xl md:text-4xl font-bold text-white stat-number" data-target="99.9">0</span>
+                           <span class="text-3xl md:text-4xl font-bold text-white stat-number" data-target="99.9" data-suffix="%">0</span>
                         </div>
-                        <span class="text-sm text-slate-400">% Uptime Guarantee</span>
+                        <span class="text-sm text-slate-400">Uptime Guarantee</span>
                     </div>
                     <div class="text-center">
                          <div class="flex items-center justify-center gap-2">
                             <i data-lucide="clock" class="text-blue-400"></i>
-                            <span class="text-3xl md:text-4xl font-bold text-white stat-number" data-target="24">0</span>
+                            <span class="text-3xl md:text-4xl font-bold text-white stat-number" data-target="24" data-suffix="/7">0</span>
                         </div>
-                        <span class="text-sm text-slate-400">/7 Proactive Support</span>
+                        <span class="text-sm text-slate-400">Proactive Support</span>
                     </div>
                     <div class="text-center">
                          <div class="flex items-center justify-center gap-2">
                             <i data-lucide="users" class="text-blue-400"></i>
-                            <span class="text-3xl md:text-4xl font-bold text-white stat-number" data-target="200">0</span>
+                            <span class="text-3xl md:text-4xl font-bold text-white stat-number" data-target="200" data-suffix="+">0</span>
                         </div>
-                        <span class="text-sm text-slate-400">+ Happy Clients</span>
+                        <span class="text-sm text-slate-400">Happy Clients</span>
                     </div>
                 </div>
             </div>
@@ -706,42 +706,18 @@
         });
 
 
-        // --- Animate on Scroll ---
+        // --- Animate on Scroll (non-stat elements) ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    if (entry.target.classList.contains('stat-number')) {
-                        const target = +entry.target.getAttribute('data-target');
-                        const el = entry.target;
-                        let start = 0;
-                        const duration = 2000;
-                        const stepTime = Math.abs(Math.floor(duration / target));
-                        
-                        const timer = setInterval(() => {
-                            start += 1;
-                            if (target % 1 !== 0) { // check for float
-                                el.textContent = (start / 10).toFixed(1);
-                                if ((start/10) >= target) {
-                                  el.textContent = target;
-                                  clearInterval(timer);
-                                }
-                            } else {
-                                el.textContent = start;
-                                if (start >= target) {
-                                    el.textContent = target;
-                                    clearInterval(timer);
-                                }
-                            }
-                        }, 10);
-                    } else {
-                        entry.target.classList.add('animate-slide-in-up');
-                    }
+                    entry.target.classList.add('animate-slide-in-up');
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.stat-number').forEach(el => observer.observe(el));
+        // Observe elements for animation (excluding stat-number which is handled by simple.js)
+        document.querySelectorAll('.animate-on-scroll:not(.stat-number)').forEach(el => observer.observe(el));
 
 
         // --- ROI Calculator ---
@@ -955,6 +931,9 @@
 
     });
     </script>
+
+    <!-- Scripts -->
+    <script src="assets/js/simple.js" defer></script>
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
